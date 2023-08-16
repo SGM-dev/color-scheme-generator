@@ -6,6 +6,40 @@
 }
 
 body {
-    max-width: 550px;
-    margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.container {
+  margin: 0 auto;
+  max-width: 550px;
+}
+
+.container section {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  grid-template-rows: 450px 0;
+}
+
+.color-one {
+  background: #f55a5a;
+}
+
+.color-two {
+  background: #2b283a;
+}
+
+.color-three {
+  background: #fbf3ab;
+}
+
+.color-four {
+  background: #aad1b6;
+}
+
+.color-five {
+  background: #a626d3;
 }
