@@ -26,6 +26,10 @@ function getScheme(hex, mode) {
     });
 }
 
+function copyHex(hexValue) {
+  navigator.clipboard.writeText(hexValue);
+}
+
 form.addEventListener("submit", (e) => {
   e.preventDefault();
   const options = {
@@ -37,9 +41,9 @@ form.addEventListener("submit", (e) => {
 });
 
 document.addEventListener("click", (e) => {
-  if(e.target.dataset.hex){
-    console.log(e.target.dataset.hex)
+  if (e.target.dataset.hex) {
+    copyHex(e.target.dataset.hex);
   }
-})
+});
 
 renderScheme();
