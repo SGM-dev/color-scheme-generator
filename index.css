@@ -29,10 +29,6 @@ body {
   text-align: center;
 }
 
-.container section div {
-cursor: pointer;
-}
-
 .color-one {
   background: #f55a5a;
 }
