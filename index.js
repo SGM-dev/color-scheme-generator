@@ -4,12 +4,12 @@ const form = document.getElementById("color-scheme");
 
 function renderScheme() {
   let colorHtml = "";
-  let codeHtml = "";
+  let hexCodeHtml = "";
   for (let color of colorArray) {
-    colorHtml += `<div class="color" style="background: ${color}"></div>`;
-    codeHtml += `<span class="hex">${color}</span>`;
+    colorHtml += `<div class="color" style="background: ${color}" data-hex="${color}"></div>`;
+    hexCodeHtml += `<span class="hex" data-hex="${color}">${color}</span>`;
   }
-  document.getElementById("colors").innerHTML = `${colorHtml}${codeHtml}`;
+  document.getElementById("colors").innerHTML = `${colorHtml}${hexCodeHtml}`;
   document.body.style.background = `linear-gradient(
     90deg,${colorArray.toString()}
   )`;
@@ -35,5 +35,11 @@ form.addEventListener("submit", (e) => {
   getScheme(options.hex, options.mode);
   renderScheme();
 });
+
+document.addEventListener("click", (e) => {
+  if(e.target.dataset.hex){
+    console.log(e.target.dataset.hex)
+  }
+})
 
 renderScheme();
