@@ -15,12 +15,25 @@ function renderScheme() {
   )`;
 }
 
+function getScheme(hex, mode) {
+  fetch(`https://www.thecolorapi.com/scheme?hex=${hex}&mode=${mode}`)
+    .then((res) => res.json())
+    .then((data) => {
+      colorArray = [];
+      for (let color of data.colors) {
+        colorArray.push(color.hex.value);
+      }
+    });
+}
+
 form.addEventListener("submit", (e) => {
   e.preventDefault();
   const options = {
-    hex: document.getElementById("color-picker").value,
+    hex: document.getElementById("color-picker").value.slice(1),
     mode: document.getElementById("mode-selector").value,
   };
+  getScheme(options.hex, options.mode);
+  renderScheme();
 });
 
 renderScheme();
