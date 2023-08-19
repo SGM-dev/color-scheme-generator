@@ -15,4 +15,12 @@ function renderScheme() {
   )`;
 }
 
+form.addEventListener("submit", (e) => {
+  e.preventDefault();
+  const options = {
+    hex: document.getElementById("color-picker").value,
+    mode: document.getElementById("mode-selector").value,
+  };
+});
+
 renderScheme();
