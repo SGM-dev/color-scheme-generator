@@ -13,14 +13,6 @@ body {
   justify-content: center;
   align-items: center;
   height: 100vh;
-  background: linear-gradient(
-    90deg,
-    #f55a5a,
-    #2b283a,
-    #fbf3ab,
-    #aad1b6,
-    #a626d3
-  );
 }
 
 .container {
