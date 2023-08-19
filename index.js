@@ -28,6 +28,10 @@ function getScheme(hex, mode) {
 
 function copyHex(hexValue) {
   navigator.clipboard.writeText(hexValue);
+  document.getElementById(
+    "modal-content"
+  ).innerText = `You have copied ${hexValue}!`;
+  document.getElementById("notification-modal").style.display = "block";
 }
 
 form.addEventListener("submit", (e) => {
@@ -43,6 +47,9 @@ form.addEventListener("submit", (e) => {
 document.addEventListener("click", (e) => {
   if (e.target.dataset.hex) {
     copyHex(e.target.dataset.hex);
+    setTimeout(() => {
+      document.getElementById("notification-modal").style.display = "none";
+    }, 2000);
   }
 });
 
